@@ -1,0 +1,6 @@
+[submodule "acontis_lib"]
+	path = acontis_lib
+	url = git@github.com:ddi-lib/acontis_lib.git
+[submodule "conan_config"]
+	path = conan_config
+	url = git@github.com:ddi-build/conan_config.git

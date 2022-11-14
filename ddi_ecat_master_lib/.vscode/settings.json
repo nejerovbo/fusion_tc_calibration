@@ -1,0 +1,15 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "files.associations": {
+        "algorithm": "cpp",
+        "streambuf": "cpp",
+        "array": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "sstream": "cpp"
+    },
+    "cmake.configureOnOpen": true,
+    "cSpell.words": [
+        "dout"
+    ]
+}

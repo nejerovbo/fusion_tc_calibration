@@ -1,0 +1,10 @@
+[requires]
+ddi_base64/1.0.0@ddi/dev
+ddi_common/1.0.0@ddi/dev
+ddi_crypto/1.0.0@ddi/dev
+ddi_md5/1.0.0@ddi/dev
+ddi_ntime/1.0.0@ddi/dev
+ddi_os_posix/1.0.0@ddi/dev
+
+[generators]
+cmake

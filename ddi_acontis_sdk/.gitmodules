@@ -1,0 +1,6 @@
+[submodule "ddi_common_lib"]
+	path = ddi_common_lib
+	url = git@github.com:ddi-lib/ddi_common_lib.git
+[submodule "acontis_lib"]
+	path = acontis_lib
+	url = git@github.com:ddi-lib/acontis_lib.git

@@ -1,0 +1,51 @@
+name: Check-in Build and Test 
+
+# This github action will be triggered on any commit on any branch
+
+on:
+  push:
+  pull_request_target:
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Debug
+
+jobs:
+  build:
+    # The CMake configure and build commands are platform agnostic and should work equally
+    # well on Windows or Mac.  You can convert this to a matrix build if you need
+    # cross-platform coverage.
+    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+    runs-on: ubuntu-latest
+
+    # Install submodules
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.SHAUN_PAT_TOKEN }}
+        submodules: recursive
+
+    - name: Build
+      # Build the project 
+      run: |
+           pip3 install wheel setuptools
+           pip3 install conan
+           export PATH=$PATH:/home/runner/.local/bin
+           echo $PATH
+           which conan
+           conan --version
+           conan profile new default --detect  # Generates default profile detecting GCC and sets old ABI
+           conan profile update settings.compiler.libcxx=libstdc++11 default  # Sets libcxx to C++11 ABI
+           cd conan_config
+           install/install_ddi_conan_profiles.sh
+           cd -
+           conan remote add ddi-dev https://ddi.jfrog.io/artifactory/api/conan/ddi-conan-dev-local
+           conan user stomaszewski -r ddi-dev -p ${{ secrets.SHAUN_JFROG_PW }}
+           conan install . -if build/ -pr lin64
+           cmake -B build/
+           cmake --build build/
+    - name: Test
+      working-directory: ${{github.workspace}}
+      # Run a quick smoketest on the library
+      run: ./build/bin/ddi_em_test github-action

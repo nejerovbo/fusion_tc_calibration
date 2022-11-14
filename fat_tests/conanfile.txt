@@ -1,0 +1,8 @@
+[requires]
+gflags/2.2.2
+gtest/cci.20210126
+odbc/2.3.9
+boost/1.80.0
+
+[generators]
+cmake

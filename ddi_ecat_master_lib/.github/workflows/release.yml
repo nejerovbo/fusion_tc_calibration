@@ -1,0 +1,82 @@
+name: Release Build and Test 
+
+# Supports building the ecat master lib through cmake and github actions
+
+# Only trigger the release build on vx.y.z_nnn tags. For example, a tag of "v1.0.0_RC0" will trigger this workflow
+# The following link contains a list of github supported filtering:
+# https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+*
+    branches:
+      release release_build_test
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    # Build on the latest supported ubuntu with the GCC 9.x toolchain
+    runs-on: ubuntu-latest
+
+    # Checkout the submodules for this repo
+    steps:     
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.SHAUN_PAT_TOKEN }}
+        submodules: recursive
+
+    # Setup GCC 9
+    - name: Set up GCC
+      uses: egor-tensin/setup-gcc@v1
+      with:
+        version: 9
+        platform: x64
+
+    # Get the tag value so it can be used to for the build
+    - name: Extract Tag
+      id: tag
+      uses: aaronbarnaby/get-tag@v1.0.0
+      with:
+        without_prefix_v: true # Remove prefix `v` from tag  
+   
+    # Set the Environment variables (steps.tag.outputs.tag) so it can be used during the build
+    - name: Set env variables
+      id: vars
+      run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+
+    - name: Build
+      # Build the Project
+      run: |
+           export BUILD_VERSION=$(echo ${{ steps.tag.outputs.tag }} | sed -e 's/[a-zA-Z]//g' | sed -e 's/_.*//g')
+           sudo apt-get install doxygen
+           pip3 install wheel setuptools
+           pip3 install conan
+           export PATH=$PATH:/home/runner/.local/bin
+           echo $PATH
+           which conan
+           conan --version
+           conan profile new default --detect  # Generates default profile detecting GCC and sets old ABI
+           conan profile update settings.compiler.libcxx=libstdc++11 default  # Sets libcxx to C++11 ABI
+           cd conan_config
+           install/install_ddi_conan_profiles.sh
+           cd -
+           conan remote add ddi-dev https://ddi.jfrog.io/artifactory/api/conan/ddi-conan-dev-local
+           conan user stomaszewski -r ddi-dev -p ${{ secrets.SHAUN_JFROG_PW }}
+           conan install . -if build/ -pr lin64
+           cmake -B build/ -DBUILD_VERSION=$BUILD_VERSION
+           cmake --build build/
+    - name: Test
+      working-directory: ${{github.workspace}}
+      # Run version info test.  We can't run tests with actual EtherCAT masters on the github servers
+      # Mocking/simulating will be useful here
+      run: ./build/bin/ddi_em_test github-action
+      # Upload the artifact. The build/build_artifact directory will be uploaded to the git server
+    - name: Upload build output
+      uses: actions/upload-artifact@v2
+      with:
+        name: build_output
+        path: build/build_artifacts/
