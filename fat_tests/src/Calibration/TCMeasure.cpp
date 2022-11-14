@@ -22,6 +22,7 @@
 #include <termios.h>
 #include <fcntl.h>
 #include <boost/math/statistics/linear_regression.hpp>
+#include <time.h>
 
 using namespace std;
 
@@ -80,11 +81,11 @@ union f_to_w
 
 struct cal_params
 {
-  float uVolt_offset[NUM_TC_CHANNELS] = {0.01, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00};
-  float uVolt_gain[NUM_TC_CHANNELS] = {1.01, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00};
+  float uVolt_offset[NUM_TC_CHANNELS] = {0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00};
+  float uVolt_gain[NUM_TC_CHANNELS] = {1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00};
   int   tc_ohms[NUM_TC_CHANNELS] = {0, 0, 0, 0, 0, 0, 0, 0};
   float uAmp_gain = {0.0};
-  int   cj_offset = {0};
+  float cj_offset = {0.00};
   float cj_gain = {1.0};
 };
 
@@ -96,7 +97,7 @@ void  write_cal_to_flash(ddi_fusion_instance_t* fusion_instance);
 void  calibrate_tc(ddi_fusion_instance_t* fusion_instance);
 void  calculate_tc_params(ddi_fusion_instance_t* fusion_instance, float uVolt_gain[], int uVolt_offset[]);
 void  calculate_tc_ohms(ddi_fusion_instance_t* fusion_instance, int *tc_ohms, int num_tc_channels);
-void  calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, float uVolt_gain[], int uVolt_offset[]);
+void  calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, float uVolt_gain[], float uVolt_offset[]);
 float calculate_uAmp_gain(ddi_fusion_instance_t* fusion_instance, int tc_ohms);
 void  calculate_cj_parms(ddi_fusion_instance_t *fusion_instance, float *slope, int *intercept);
 
@@ -187,7 +188,6 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
   display_cal_parms(fusion_instance);
   
 
-  #if 0
   enable_DC_out();
   calibrate_tc_slope_and_intercept(fusion_instance, m_params.uVolt_gain, m_params.uVolt_offset);
   disable_DC_out();
@@ -195,9 +195,8 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
   printf("\n");
   for(int i = 0; i < 8; i++)
   {
-    printf("channel %2d, tc slope  = %7.5f,  tc intercept   = %8d\n", i, m_params.uVolt_gain[i], m_params.uVolt_offset[i]);
+    printf("channel %2d, tc slope  = %7.5f,  tc intercept   = %7.5f\n", i, m_params.uVolt_gain[i], m_params.uVolt_offset[i]);
   }
-#endif
 
 #if 0
   printf("Hook DC205 to the tc inputs, hit any key to continue\n");
@@ -239,17 +238,17 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
 
 #endif
 
+
+
   // Send the real parameters to the card
   set_default_cal_parms(fusion_instance, &m_params);
 
-#if 0
   printf("Enter p to program the cal parameters to flash, any other key to continue\n");
   scanf("%c", &c);
   if( ('p' == c) || ('P' == c) )
   {
     write_cal_to_flash(fusion_instance);
   }
-#endif
 }
 
 
@@ -260,7 +259,7 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
 
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
-void calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, float tc_slope[], int tc_intercept[])
+void calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, float tc_slope[], float tc_intercept[])
 {
   using boost::math::statistics::simple_ordinary_least_squares;
   vector<double> x[NUM_TC_CHANNELS];
@@ -306,7 +305,7 @@ void calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, fl
     auto [intercept, slope] = simple_ordinary_least_squares(x[chan], y);
     printf("channel %d  intercept = %f, slope = %f\n\n", chan, intercept, slope);
     tc_slope[chan] = slope;
-    tc_intercept[chan] = round(intercept);
+    tc_intercept[chan] = intercept;
   }
 
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
@@ -573,8 +572,17 @@ void write_cal_to_flash(ddi_fusion_instance_t* fusion_instance)
 //-----------------------------------------------------------------------------
 void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m_params)
 {
-
   int date[] = {2000, 1, 1, 0, 0, 0, 0, 0};
+
+  time_t t = time(NULL);
+  struct tm tm = *localtime(&t);
+  printf("year = %d\n", tm.tm_year + 1900);
+  date[0] = tm.tm_year + 1900;
+  date[1] = tm.tm_mon + 1;
+  date[2] = tm.tm_mday;
+  date[3] = tm.tm_hour;
+  date[4] = tm.tm_min;
+
 
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG, 1);
   send_cal_command(fusion_instance, CAL_COMMAND_SET_VERSION);
@@ -591,7 +599,6 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
   {
     f_to_w intercept;
     intercept.fl = m_params->uVolt_offset[chan];
-    printf("offset = %f  ", intercept.fl);
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2), intercept.wds[0]);
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1 , intercept.wds[1]);
   }
@@ -606,7 +613,7 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1 , intercept.wds[1]);  
   }
   send_cal_command(fusion_instance, CAL_COMMAND_SET_UV_OFFSET_HI);
-
+  printf("\n");
 
   // Setting uVolt gain
   for(int chan = 0; chan < NUM_TC_CHANNELS/2; chan++)
@@ -639,9 +646,10 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
   send_cal_command(fusion_instance, CAL_COMMAND_SET_TC_OHMS);
 
   // Setting cold junction offset
-  int offset = m_params->cj_offset;
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 0, (offset & 0xFFFF));
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 1, (offset >> 16) & 0xFFFF);
+  f_to_w intercept;
+  intercept.fl = m_params->cj_offset;
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 0, intercept.wds[0]);
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 1, intercept.wds[1]);
   send_cal_command(fusion_instance, CAL_COMMAND_SET_CJ_OFFSET);
 
   // Setting cold junction gain
@@ -683,8 +691,8 @@ void display_cal_parms(ddi_fusion_instance_t* fusion_instance)
   for(int chan = 0; chan < NUM_TC_CHANNELS/2; chan++)
   {
     f_to_w intercept;
-    intercept.wds[0] = ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) ) & 0xFFFF;
-    intercept.wds[0] = ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1) & 0xFFFF;
+    intercept.wds[0] = ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) );
+    intercept.wds[1] = ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1);
     printf("%5.5f    ", intercept.fl);
   }
 
@@ -693,8 +701,8 @@ void display_cal_parms(ddi_fusion_instance_t* fusion_instance)
   for(int chan = 0; chan < NUM_TC_CHANNELS/2; chan++)
   {
     f_to_w intercept;
-    intercept.wds[0] = ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) ) & 0xFFFF;
-    intercept.wds[0] = ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1) & 0xFFFF;
+    intercept.wds[0] = ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) );
+    intercept.wds[1] = ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1);
     printf("%5.5f    ", intercept.fl);
   }
   printf("\n");
@@ -740,9 +748,10 @@ void display_cal_parms(ddi_fusion_instance_t* fusion_instance)
 
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_CJ_OFFSET);
   usleep(TEN_MS);
-  value =  (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 0)) & 0xFFFF;
-  value += ((ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 1) & 0xFFFF) << 16);
-  printf("CJ offset     = %8d\n", value);
+  f_to_w intercept;
+  intercept.wds[0] = ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 0);
+  intercept.wds[1] = ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 1);
+  printf("CJ offset     =  %5.5f\n", intercept.fl);
 
 
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_CJ_GAIN);
