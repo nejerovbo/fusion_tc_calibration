@@ -81,12 +81,12 @@ union f_to_w
 
 struct cal_params
 {
-  float uVolt_offset[NUM_TC_CHANNELS] = {0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00};
-  float uVolt_gain[NUM_TC_CHANNELS] = {1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00};
+  float uVolt_slope[NUM_TC_CHANNELS] = {1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00};
+  float uVolt_intercept[NUM_TC_CHANNELS] = {0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00};
   int   tc_ohms[NUM_TC_CHANNELS] = {0, 0, 0, 0, 0, 0, 0, 0};
   float uAmp_gain = {0.0};
-  float cj_offset = {0.00};
-  float cj_gain = {1.0};
+  float cj_slope = {1.0};
+  float cj_intercept = {0.00};
 };
 
 
@@ -187,30 +187,20 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
   set_default_cal_parms(fusion_instance, &m_params);
   display_cal_parms(fusion_instance);
   
-
-  enable_DC_out();
-  calibrate_tc_slope_and_intercept(fusion_instance, m_params.uVolt_gain, m_params.uVolt_offset);
-  disable_DC_out();
-
-  printf("\n");
-  for(int i = 0; i < 8; i++)
-  {
-    printf("channel %2d, tc slope  = %7.5f,  tc intercept   = %7.5f\n", i, m_params.uVolt_gain[i], m_params.uVolt_offset[i]);
-  }
-
-#if 0
   printf("Hook DC205 to the tc inputs, hit any key to continue\n");
   getchar();
 
   enable_DC_out();
-  calculate_tc_params(fusion_instance, m_params.uVolt_gain, m_params.uVolt_offset);
+  calibrate_tc_slope_and_intercept(fusion_instance, m_params.uVolt_slope, m_params.uVolt_intercept);
+  disable_DC_out();
 
   printf("\n");
   for(int i = 0; i < 8; i++)
   {
-    printf("channel %2d, tc offset  = %8d,  tc gain   = %7.5f\n", i, m_params.uVolt_offset[i], m_params.uVolt_gain[i]);
+    printf("channel %2d, tc slope  = %7.5f,  tc intercept   = %7.5f\n", i, m_params.uVolt_slope[i], m_params.uVolt_intercept[i]);
   }
-  disable_DC_out();
+
+#if 0
 
 
   printf("\n\nPlug in the shorting connector to measure resistance.\n");
@@ -310,152 +300,6 @@ void calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, fl
 
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
   usleep(TEN_MS);
-}
-
-
-
-//-----------------------------------------------------------------------------
-// How to use vectors
-//-----------------------------------------------------------------------------
-#if 0
-  vector<double> x[5];
-  vector<double> y;
-  for(int i = 0; i < 5; i++)
-  {
-    x[0].push_back(i*2);
-    y.push_back(i*3 + .5);
-  }
-
-  for(int i = 0; i < 5; i++)
-  {
-    printf("x = %f\n", x[0][i]);
-  }
-#endif
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-
-
-
-
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-void calculate_tc_params(ddi_fusion_instance_t* fusion_instance, float tc_slope[], int tc_intercept[])
-{
-  int x1[NUM_TC_CHANNELS], x2[NUM_TC_CHANNELS], y1, y2;
-  int sum, value;
-
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_TC_uVOLTS);
-  usleep(TEN_MS);
-
-  set_DC_voltage(0.00);
-  usleep(ONE_SECOND);
-
-  // Read value from DMM
-  y1 = 1000000 * read_meter_volts();
-  printf("meter reading = %d\n", y1);
-
-
-  for(int chan = 0; chan < NUM_TC_CHANNELS; chan++)
-  {
-    sum = 0;
-    for(int sam = 0; sam < NUM_SAMPLES; sam++)
-    {
-      usleep(HUNDRED_MS);
-      value =   ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + (chan * 2) + 0) & 0xFFFF;
-      value += (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + (chan * 2) + 1) & 0xFFFF) << 16;
-      printf("value = %d\n", value);
-      sum += value;
-    }
-    x1[chan] = sum/NUM_SAMPLES;
-  }
-  
-  set_DC_voltage(TC_FULL_SCALE_VOLTS);
-  usleep(ONE_SECOND);
-
-  // Read value from DMM
-  y2 = 1000000 * read_meter_volts();
-  printf("meter reading = %d\n", y2);
-
-
-  for(int chan = 0; chan < NUM_TC_CHANNELS; chan++)
-  {
-    sum = 0;
-    for(int sam = 0; sam < NUM_SAMPLES; sam++)
-    {
-      usleep(HUNDRED_MS);
-      value =   ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + (chan * 2) + 0) & 0xFFFF;
-      value += (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + (chan * 2) + 1) & 0xFFFF) << 16;
-      printf("value = %d\n", value);
-      sum += value;
-    }
-    x2[chan] = sum/NUM_SAMPLES;
-  }
-
-  for(int chan = 0; chan < NUM_TC_CHANNELS; chan++)
-  {
-    tc_slope[chan] = float(y2 - y1)/(x2[chan] - x1[chan]);
-    tc_intercept[chan] = y1 - round((tc_slope[chan]) * x1[chan]);
-  }
-
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL); 
-}
-
-
-#define CJ_FS_VOLTS 1.00
-//-----------------------------------------------------------------------------
-// Calculate slope and intercept
-//   slope = (y2 - y1)/( x2 - x1)
-//     where y is meter readings and x is adc readings 
-//-----------------------------------------------------------------------------
-void  calculate_cj_parms(ddi_fusion_instance_t *fusion_instance, float *slope, int *intercept)
-{
-  int x1, x2, y1, y2;
-  int sum, value;
-
-  set_DC_voltage(0.00);
-  usleep(ONE_SECOND);
-
-  // Read value from DMM
-  y1 = 1000000 * read_meter_volts();
-  printf("meter reading = %d\n", y1);
-
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_CJ_uVOLTS);
-  usleep(TEN_MS);
-
-  sum = 0;
-  for(int samples = 0; samples < NUM_SAMPLES; samples++)
-  {
-    usleep(HUNDRED_MS);
-    value =   ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + 0) & 0xFFFF;
-    value += (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + 1) & 0xFFFF) << 16;
-    printf("value = %d\n", value);
-    sum += value;
-  }
-  x1 = sum/NUM_SAMPLES;
-
-  set_DC_voltage(CJ_FS_VOLTS);
-  usleep(ONE_SECOND);
-
-  // Read value from DMM
-  y2 = 1000000 * read_meter_volts();
-  printf("meter reading = %d\n", y2);
-
-  sum = 0;
-  for(int samples = 0; samples < NUM_SAMPLES; samples++)
-  {
-    usleep(HUNDRED_MS);
-    value =   ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + 0) & 0xFFFF;
-    value += (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + 1) & 0xFFFF) << 16;
-    printf("value = %d\n", value);
-    sum += value;
-  }
-  x2 = sum/NUM_SAMPLES;
-
-  *slope = float(y2 - y1)/(x2 - x1);
-  *intercept = y1 - round((*slope) * x1);
-
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
-
 }
 
 
@@ -576,7 +420,6 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
 
   time_t t = time(NULL);
   struct tm tm = *localtime(&t);
-  printf("year = %d\n", tm.tm_year + 1900);
   date[0] = tm.tm_year + 1900;
   date[1] = tm.tm_mon + 1;
   date[2] = tm.tm_mday;
@@ -598,7 +441,7 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
   for(int chan = 0; chan < NUM_TC_CHANNELS/2; chan++)
   {
     f_to_w intercept;
-    intercept.fl = m_params->uVolt_offset[chan];
+    intercept.fl = m_params->uVolt_intercept[chan];
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2), intercept.wds[0]);
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1 , intercept.wds[1]);
   }
@@ -608,7 +451,7 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
   for(int chan = 0; chan < NUM_TC_CHANNELS/2; chan++)
   {
     f_to_w intercept;
-    intercept.fl = m_params->uVolt_offset[chan + NUM_TC_CHANNELS/2];
+    intercept.fl = m_params->uVolt_intercept[chan + NUM_TC_CHANNELS/2];
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2), intercept.wds[0]);
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1 , intercept.wds[1]);  
   }
@@ -619,7 +462,7 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
   for(int chan = 0; chan < NUM_TC_CHANNELS/2; chan++)
   {
     f_to_w gain;
-    gain.fl = m_params->uVolt_gain[chan];
+    gain.fl = m_params->uVolt_slope[chan];
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2), gain.wds[0]);
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1, gain.wds[1]);
   }
@@ -628,7 +471,7 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
   for(int chan = 0; chan < NUM_TC_CHANNELS/2; chan++)
   {
     f_to_w gain;
-    gain.fl = m_params->uVolt_gain[chan + NUM_TC_CHANNELS/2];
+    gain.fl = m_params->uVolt_slope[chan + NUM_TC_CHANNELS/2];
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2), gain.wds[0]);
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1, gain.wds[1]);
   }
@@ -647,14 +490,14 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
 
   // Setting cold junction offset
   f_to_w intercept;
-  intercept.fl = m_params->cj_offset;
+  intercept.fl = m_params->cj_intercept;
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 0, intercept.wds[0]);
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 1, intercept.wds[1]);
   send_cal_command(fusion_instance, CAL_COMMAND_SET_CJ_OFFSET);
 
   // Setting cold junction gain
   f_to_w gain;
-  gain.fl = m_params->cj_gain;
+  gain.fl = m_params->cj_slope;
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 0, gain.wds[0]);
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 1, gain.wds[1]);
   send_cal_command(fusion_instance, CAL_COMMAND_SET_CJ_GAIN);  
@@ -677,11 +520,12 @@ void display_cal_parms(ddi_fusion_instance_t* fusion_instance)
 
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_DATE);
   usleep(TEN_MS);
-  printf("Date          = ");
-  for(int i = 0; i < 6; i++)
-  {
-    printf("%8d   ", ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + i));
-  }
+  printf("Date/Time     =  ");
+  printf("%4d/",   ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 0));
+  printf("%02d/",  ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 1));
+  printf("%02d  ", ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 2));
+  printf("%02d:",  ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 3));
+  printf("%02d",   ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 4));
   printf("\n");
 
 

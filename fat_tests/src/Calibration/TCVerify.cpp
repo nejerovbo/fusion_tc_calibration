@@ -419,20 +419,6 @@ void verify_rtd(ddi_fusion_instance_t* fusion_instance)
 }
 
 
-struct cal_params
-{
-  int   uVolt_offset[NUM_TC_CHANNELS] = {0, 0, 0, 0, 0, 0, 0, 0};
-  float uVolt_gain[NUM_TC_CHANNELS] = {1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00};
-  int   tc_ohms[NUM_TC_CHANNELS] = {0};
-  float uAmp_gain = {0.0};
-  int   cj_offset = {0};
-  float cj_gain = {1.0};
-};
-
-extern void  set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *params);
-extern void  display_cal_parms(ddi_fusion_instance_t* fusion_instance);
-
-
 
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
