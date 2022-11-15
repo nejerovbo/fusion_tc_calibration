@@ -22,6 +22,9 @@
 #include <termios.h>
 #include <fcntl.h>
 #include <boost/math/statistics/linear_regression.hpp>
+#include "MatlabDataArray.hpp"
+#include "MatlabEngine.hpp"
+#include <iostream>
 #include <time.h>
 
 using namespace std;
@@ -252,6 +255,7 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
 void calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, float tc_slope[], float tc_intercept[])
 {
   using boost::math::statistics::simple_ordinary_least_squares;
+  using boost::math::statistics::simple_ordinary_least_squares_with_R_squared;
   vector<double> x[NUM_TC_CHANNELS];
   vector<double> y;
 
@@ -292,16 +296,43 @@ void calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, fl
 
   for(int chan = 0; chan < NUM_TC_CHANNELS; chan++)
   {
-    auto [intercept, slope] = simple_ordinary_least_squares(x[chan], y);
-    printf("channel %d  intercept = %f, slope = %f\n\n", chan, intercept, slope);
+//    auto [intercept, slope] = simple_ordinary_least_squares(x[chan], y);
+    auto [intercept, slope, R] = simple_ordinary_least_squares_with_R_squared(x[chan], y);
+    printf("channel %d  intercept = %f, slope = %f, R = %f\n", chan, intercept, slope, R);
     tc_slope[chan] = slope;
     tc_intercept[chan] = intercept;
   }
 
+  
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
   usleep(TEN_MS);
 }
 
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void callFevalgcd()
+{
+// Pass vector containing MATLAB data array scalar
+    using namespace matlab::engine;
+
+    // Start MATLAB engine synchronously
+    std::unique_ptr<MATLABEngine> matlabPtr = startMATLAB();
+
+    // Create MATLAB data array factory
+    matlab::data::ArrayFactory factory;
+
+    // Pass vector containing 2 scalar args in vector    
+    std::vector<matlab::data::Array> args({
+        factory.createScalar<int16_t>(30),
+        factory.createScalar<int16_t>(56) });
+
+    // Call MATLAB function and return result
+    matlab::data::TypedArray<int16_t> result = matlabPtr->feval(u"gcd", args);
+    int16_t v = result[0];
+    std::cout << "Result: " << v << std::endl;
+  
+}
 
 
 //-----------------------------------------------------------------------------
