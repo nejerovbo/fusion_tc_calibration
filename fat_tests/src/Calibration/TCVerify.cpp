@@ -29,38 +29,6 @@ using namespace std;
 extern AcontisTestFixture *g_fixture;
 extern void  display_cal_parms(ddi_fusion_instance_t* fusion_instance);
 
-//-----------------------------------------------------------------------------
-// Calibration command codes, these are shared between the calibration
-//  program and the card, so they need to be synched.
-//-----------------------------------------------------------------------------
-#define CAL_COMMAND_DISPLAY_NORMAL          0x5A00
-#define CAL_COMMAND_DISPLAY_TC_uVOLTS       0x5A01
-#define CAL_COMMAND_DISPLAY_TC_OHMS         0x5A02
-#define CAL_COMMAND_DISPLAY_CJ_uVOLTS       0x5A03
-#define CAL_COMMAND_PREP_WRITE              0x5A0E
-#define CAL_COMMAND_WRITE_CAL_TO_FLASH      0x5A0F
-
-#define CAL_COMMAND_SET_VERSION             0x5A10
-#define CAL_COMMAND_GET_VERSION             0x5A11
-#define CAL_COMMAND_SET_DATE                0x5A12
-#define CAL_COMMAND_GET_DATE                0x5A13
-#define CAL_COMMAND_SET_UV_OFFSET_LO        0x5A14
-#define CAL_COMMAND_SET_UV_OFFSET_HI        0x5A15
-#define CAL_COMMAND_GET_UV_OFFSET_LO        0x5A16
-#define CAL_COMMAND_GET_UV_OFFSET_HI        0x5A17
-#define CAL_COMMAND_SET_UV_GAIN_LO          0x5A18      // Channels 3 - 0
-#define CAL_COMMAND_SET_UV_GAIN_HI          0x5A19      // Channels 7 - 4
-#define CAL_COMMAND_GET_UV_GAIN_LO          0x5A1A      // Channels 3 - 0
-#define CAL_COMMAND_GET_UV_GAIN_HI          0x5A1B      // Channels 7 - 4
-#define CAL_COMMAND_SET_UA_GAIN             0x5A1C
-#define CAL_COMMAND_GET_UA_GAIN             0x5A1D
-#define CAL_COMMAND_SET_TC_OHMS             0x5A1E
-#define CAL_COMMAND_GET_TC_OHMS             0x5A1F
-#define CAL_COMMAND_SET_CJ_OFFSET           0x5A20
-#define CAL_COMMAND_GET_CJ_OFFSET           0x5A21
-#define CAL_COMMAND_SET_CJ_GAIN             0x5A22
-#define CAL_COMMAND_GET_CJ_GAIN             0x5A23
-
 #define ONE_SECOND    1000000
 #define HUNDRED_MS    100000
 #define TEN_MS        10000
@@ -407,12 +375,12 @@ void verify_rtd(ddi_fusion_instance_t* fusion_instance)
       {
         usleep(TEN_MS);   // New samples every 10 ms
         value = (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + chan)) & 0xFFFF;
-        fprintf(fp, "%f,", value / (10^3));
+        fprintf(fp, "%f,", (float)value / (10^3));
         fflush(fp);
       }
         usleep(TEN_MS);   // New samples every 10 ms
         value = (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + chan)) & 0xFFFF;
-        fprintf(fp, "%f\n", value / (10^3));
+        fprintf(fp, "%f\n", (float)value / (10^3));
         fflush(fp);
     }
   }

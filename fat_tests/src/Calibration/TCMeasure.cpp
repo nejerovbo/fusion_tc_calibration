@@ -31,10 +31,9 @@ using namespace std;
 
 extern AcontisTestFixture *g_fixture;
 
-
 //-----------------------------------------------------------------------------
-// Calibration command codes, these are shared between the calibration
-//  program and the card, so they need to be synched.
+// Calibration command codes for the Thermocouple slot card, these are shared 
+//  between the calibration program and the slot card, so they need to be synched.
 //-----------------------------------------------------------------------------
 #define CAL_COMMAND_DISPLAY_NORMAL          0x5A00
 #define CAL_COMMAND_DISPLAY_TC_uVOLTS       0x5A01
@@ -47,22 +46,22 @@ extern AcontisTestFixture *g_fixture;
 #define CAL_COMMAND_GET_VERSION             0x5A11
 #define CAL_COMMAND_SET_DATE                0x5A12
 #define CAL_COMMAND_GET_DATE                0x5A13
-#define CAL_COMMAND_SET_UV_OFFSET_LO        0x5A14
-#define CAL_COMMAND_SET_UV_OFFSET_HI        0x5A15
-#define CAL_COMMAND_GET_UV_OFFSET_LO        0x5A16
-#define CAL_COMMAND_GET_UV_OFFSET_HI        0x5A17
-#define CAL_COMMAND_SET_UV_GAIN_LO          0x5A18      // Channels 3 - 0
-#define CAL_COMMAND_SET_UV_GAIN_HI          0x5A19      // Channels 7 - 4
-#define CAL_COMMAND_GET_UV_GAIN_LO          0x5A1A      // Channels 3 - 0
-#define CAL_COMMAND_GET_UV_GAIN_HI          0x5A1B      // Channels 7 - 4
-#define CAL_COMMAND_SET_UA_GAIN             0x5A1C
-#define CAL_COMMAND_GET_UA_GAIN             0x5A1D
+#define CAL_COMMAND_SET_UV_INTERCEPT_LO     0x5A14
+#define CAL_COMMAND_SET_UV_INTERCEPT_HI     0x5A15
+#define CAL_COMMAND_GET_UV_INTERCEPT_LO     0x5A16
+#define CAL_COMMAND_GET_UV_INTERCEPT_HI     0x5A17
+#define CAL_COMMAND_SET_UV_SLOPE_LO         0x5A18      // Channels 3 - 0
+#define CAL_COMMAND_SET_UV_SLOPE_HI         0x5A19      // Channels 7 - 4
+#define CAL_COMMAND_GET_UV_SLOPE_LO         0x5A1A      // Channels 3 - 0
+#define CAL_COMMAND_GET_UV_SLOPE_HI         0x5A1B      // Channels 7 - 4
+#define CAL_COMMAND_SET_UA_SLOPE            0x5A1C
+#define CAL_COMMAND_GET_UA_SLOPE            0x5A1D
 #define CAL_COMMAND_SET_TC_OHMS             0x5A1E
 #define CAL_COMMAND_GET_TC_OHMS             0x5A1F
-#define CAL_COMMAND_SET_CJ_OFFSET           0x5A20
-#define CAL_COMMAND_GET_CJ_OFFSET           0x5A21
-#define CAL_COMMAND_SET_CJ_GAIN             0x5A22
-#define CAL_COMMAND_GET_CJ_GAIN             0x5A23
+#define CAL_COMMAND_SET_CJ_INTERCEPT        0x5A20
+#define CAL_COMMAND_GET_CJ_INTERCEPT        0x5A21
+#define CAL_COMMAND_SET_CJ_SLOPE            0x5A22
+#define CAL_COMMAND_GET_CJ_SLOPE            0x5A23
 
 
 union f_to_w
@@ -167,8 +166,8 @@ TEST_F(AcontisTestFixture, TCTest)
   sleep(1);
 
   // Establish connection to DMM
-  status = open_connection_to_meter();
-  ASSERT_EQ(status, 1);
+  //status = open_connection_to_meter();
+  //ASSERT_EQ(status, 1);
 
   calibrate_tc(fusion_instance);
 
@@ -191,6 +190,7 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
   display_cal_parms(fusion_instance);
   
   printf("Hook DC205 to the tc inputs, hit any key to continue\n");
+  sleep(1);
   getchar();
 
   enable_DC_out();
@@ -308,7 +308,7 @@ void calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, fl
   usleep(TEN_MS);
 }
 
-
+#if 0
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 void callFevalgcd()
@@ -333,7 +333,7 @@ void callFevalgcd()
     std::cout << "Result: " << v << std::endl;
   
 }
-
+#endif
 
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
@@ -476,7 +476,7 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2), intercept.wds[0]);
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1 , intercept.wds[1]);
   }
-  send_cal_command(fusion_instance, CAL_COMMAND_SET_UV_OFFSET_LO);
+  send_cal_command(fusion_instance, CAL_COMMAND_SET_UV_INTERCEPT_LO);
 
   // Setting uVolt offset
   for(int chan = 0; chan < NUM_TC_CHANNELS/2; chan++)
@@ -486,7 +486,7 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2), intercept.wds[0]);
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1 , intercept.wds[1]);  
   }
-  send_cal_command(fusion_instance, CAL_COMMAND_SET_UV_OFFSET_HI);
+  send_cal_command(fusion_instance, CAL_COMMAND_SET_UV_INTERCEPT_HI);
   printf("\n");
 
   // Setting uVolt gain
@@ -497,7 +497,7 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2), gain.wds[0]);
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1, gain.wds[1]);
   }
-  send_cal_command(fusion_instance, CAL_COMMAND_SET_UV_GAIN_LO);
+  send_cal_command(fusion_instance, CAL_COMMAND_SET_UV_SLOPE_LO);
 
   for(int chan = 0; chan < NUM_TC_CHANNELS/2; chan++)
   {
@@ -506,11 +506,11 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2), gain.wds[0]);
     ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + (chan * 2) + 1, gain.wds[1]);
   }
-  send_cal_command(fusion_instance, CAL_COMMAND_SET_UV_GAIN_HI);
+  send_cal_command(fusion_instance, CAL_COMMAND_SET_UV_SLOPE_HI);
 
   // Setting uAmp_gain value
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG, m_params->uAmp_gain);
-  send_cal_command(fusion_instance, CAL_COMMAND_SET_UA_GAIN);
+  send_cal_command(fusion_instance, CAL_COMMAND_SET_UA_SLOPE);
 
   // Setting ohms value for resistance
   for(int chan = 0; chan < NUM_TC_CHANNELS; chan++)
@@ -524,14 +524,14 @@ void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m
   intercept.fl = m_params->cj_intercept;
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 0, intercept.wds[0]);
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 1, intercept.wds[1]);
-  send_cal_command(fusion_instance, CAL_COMMAND_SET_CJ_OFFSET);
+  send_cal_command(fusion_instance, CAL_COMMAND_SET_CJ_INTERCEPT);
 
   // Setting cold junction gain
   f_to_w gain;
   gain.fl = m_params->cj_slope;
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 0, gain.wds[0]);
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 1, gain.wds[1]);
-  send_cal_command(fusion_instance, CAL_COMMAND_SET_CJ_GAIN);  
+  send_cal_command(fusion_instance, CAL_COMMAND_SET_CJ_SLOPE);  
 
 }
 
@@ -560,7 +560,7 @@ void display_cal_parms(ddi_fusion_instance_t* fusion_instance)
   printf("\n");
 
 
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_UV_OFFSET_LO);
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_UV_INTERCEPT_LO);
   usleep(TEN_MS);
   printf("uVolt offsets =  ");
   for(int chan = 0; chan < NUM_TC_CHANNELS/2; chan++)
@@ -571,7 +571,7 @@ void display_cal_parms(ddi_fusion_instance_t* fusion_instance)
     printf("%5.5f    ", intercept.fl);
   }
 
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_UV_OFFSET_HI);
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_UV_INTERCEPT_HI);
   usleep(TEN_MS);
   for(int chan = 0; chan < NUM_TC_CHANNELS/2; chan++)
   {
@@ -583,7 +583,7 @@ void display_cal_parms(ddi_fusion_instance_t* fusion_instance)
   printf("\n");
 
 
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_UV_GAIN_LO);
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_UV_SLOPE_LO);
   usleep(TEN_MS);
   printf("uVolt gains   =  ");
   for(int chan = 0; chan < NUM_TC_CHANNELS/2; chan++)
@@ -594,7 +594,7 @@ void display_cal_parms(ddi_fusion_instance_t* fusion_instance)
     printf("%5.5f    ",  gain.fl);
   }
 
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_UV_GAIN_HI);
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_UV_SLOPE_HI);
   usleep(TEN_MS);
   for(int chan = 0; chan < NUM_TC_CHANNELS/2; chan++)
   {
@@ -606,7 +606,7 @@ void display_cal_parms(ddi_fusion_instance_t* fusion_instance)
   printf("\n");
 
 
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_UA_GAIN);
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_UA_SLOPE);
   usleep(TEN_MS);
   printf("uAmp gain     =  ");
   printf("%5.5f\n",  (float)(1000 + (int16_t)(ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG)))/1000);
@@ -621,7 +621,7 @@ void display_cal_parms(ddi_fusion_instance_t* fusion_instance)
   }
   printf("\n");
 
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_CJ_OFFSET);
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_CJ_INTERCEPT);
   usleep(TEN_MS);
   f_to_w intercept;
   intercept.wds[0] = ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 0);
@@ -629,7 +629,7 @@ void display_cal_parms(ddi_fusion_instance_t* fusion_instance)
   printf("CJ offset     =  %5.5f\n", intercept.fl);
 
 
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_CJ_GAIN);
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL , CAL_COMMAND_GET_CJ_SLOPE);
   usleep(TEN_MS);
   f_to_w gain;
   gain.wds[0] = ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + TC_PARM_REG + 0);
