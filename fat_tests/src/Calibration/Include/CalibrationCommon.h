@@ -109,6 +109,40 @@ prior written authorization of DDI is prohibited.
 // IO position of the data aquistion to read inputs from
 #define DAQ_IO_CHN_START     101
 
+
+//-----------------------------------------------------------------------------
+// Calibration command codes for the Thermocouple slot card, these are shared 
+//  between the calibration program and the slot card, so they need to be synched.
+//-----------------------------------------------------------------------------
+#define CAL_COMMAND_DISPLAY_NORMAL          0x5A00
+#define CAL_COMMAND_DISPLAY_TC_uVOLTS       0x5A01
+#define CAL_COMMAND_DISPLAY_TC_OHMS         0x5A02
+#define CAL_COMMAND_DISPLAY_CJ_uVOLTS       0x5A03
+#define CAL_COMMAND_PREP_WRITE              0x5A0E
+#define CAL_COMMAND_WRITE_CAL_TO_FLASH      0x5A0F
+
+#define CAL_COMMAND_SET_VERSION             0x5A10
+#define CAL_COMMAND_GET_VERSION             0x5A11
+#define CAL_COMMAND_SET_DATE                0x5A12
+#define CAL_COMMAND_GET_DATE                0x5A13
+#define CAL_COMMAND_SET_UV_INTERCEPT_LO     0x5A14
+#define CAL_COMMAND_SET_UV_INTERCEPT_HI     0x5A15
+#define CAL_COMMAND_GET_UV_INTERCEPT_LO     0x5A16
+#define CAL_COMMAND_GET_UV_INTERCEPT_HI     0x5A17
+#define CAL_COMMAND_SET_UV_SLOPE_LO         0x5A18      // Channels 3 - 0
+#define CAL_COMMAND_SET_UV_SLOPE_HI         0x5A19      // Channels 7 - 4
+#define CAL_COMMAND_GET_UV_SLOPE_LO         0x5A1A      // Channels 3 - 0
+#define CAL_COMMAND_GET_UV_SLOPE_HI         0x5A1B      // Channels 7 - 4
+#define CAL_COMMAND_SET_UA_SLOPE            0x5A1C
+#define CAL_COMMAND_GET_UA_SLOPE            0x5A1D
+#define CAL_COMMAND_SET_TC_OHMS             0x5A1E
+#define CAL_COMMAND_GET_TC_OHMS             0x5A1F
+#define CAL_COMMAND_SET_CJ_INTERCEPT        0x5A20
+#define CAL_COMMAND_GET_CJ_INTERCEPT        0x5A21
+#define CAL_COMMAND_SET_CJ_SLOPE            0x5A22
+#define CAL_COMMAND_GET_CJ_SLOPE            0x5A23
+
+
 #include "AcontisEnvironment.h"
 #include "AcontisTestFixture.h"
 #include "DACChip.h"

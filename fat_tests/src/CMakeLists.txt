@@ -80,19 +80,9 @@ set_target_properties(ddi_em_sdk PROPERTIES LINKER_LANGUAGE CXX)
 add_library(
 ddi_acontis_sdk SHARED ${SDK_SRCS} ../../ddi_common_lib/ddi_ntime.c ../../ddi_common_lib/ddi_os_posix.c ../../ddi_common_lib/ddi_queue.c)
 
-#add_library(matlabDataArray SHARED IMPORTED)
-#set_target_properties(matlabDataArray PROPERTIES IMPORTED_LOCATION /usr/local/MATLAB/R2022a/extern/bin/glnxa64/libMatlabDataArray.so)
-#add_library(matlabEngine SHARED IMPORTED)
-#set_target_properties(matlabEngine PROPERTIES IMPORTED_LOCATION /usr/local/MATLAB/R2022a/extern/bin/glnxa64/libMatlabEngine.so)
-#link_directories(/usr/local/MATLAB/R2022a/extern/bin/glnxa64/)
-find_library(MATLAB_ENGINE MatlabEngine HINTS /usr/local/MATLAB/R2022a/extern/bin/glnxa64/)
-find_library(MATLAB_DATA_ARRAY MatlabDataArray HINTS /usr/local/MATLAB/R2022a/extern/bin/glnxa64/)
-
-#target_link_libraries(sample_test PUBLIC ${MATLAB_ENGINE})
-
-#target_link_libraries(sample_test MatlabEngine)
-#target_link_libraries(sample_test MatlabDataArray)
-#target_link_libraries(sample_test /usr/local/MATLAB/R2022a/extern/bin/glnxa64/libMatlabDataArray.so /usr/local/MATLAB/R2022a/extern/bin/glnxa64/matlabEngine.so)
+link_directories(/usr/local/MATLAB/R2022b/extern/bin/glnxa64/)
+find_library(MATLAB_ENGINE MatlabEngine HINTS /usr/local/MATLAB/R2022b/extern/bin/glnxa64/)
+find_library(MATLAB_DATA_ARRAY MatlabDataArray HINTS /usr/local/MATLAB/R2022b/extern/bin/glnxa64/)
 
 target_link_libraries(ddi_acontis_sdk ${CMAKE_SOURCE_DIR}/../acontis_lib/SDK/LIB/Linux/x64/libEcMaster.a ${CMAKE_SOURCE_DIR}/../acontis_lib/Bin/Linux/x64/libemllI8254x.so)
 
@@ -105,9 +95,10 @@ link_directories(${CMAKE_SOURCE_DIR}/../ddi_ecat_master_lib/build/lib /opt/rh/de
 
 # To fix the unknown linker error
 set_target_properties(ddi_acontis_sdk PROPERTIES LINKER_LANGUAGE CXX)
-# Link the DDI Acontis SDK and Conan libraries
-# target_link_libraries(sample_test dl odbc pthread ddi_acontis_sdk ${CONAN_LIBS})
+
+# Link the DDI Acontis SDK , Conan libraries and Matlab libraries
 target_link_libraries(sample_test ${MATLAB_ENGINE} ${MATLAB_DATA_ARRAY} dl odbc pthread ddi_acontis_sdk ddi_em_sdk ${CONAN_LIBS})
+
 # Setup include directories
 target_include_directories(sample_test PRIVATE ${FatTest_SOURCE_DIR}/include/)
 target_include_directories(sample_test PRIVATE ${FatTest_SOURCE_DIR}/DVT/)
@@ -125,8 +116,7 @@ target_include_directories(sample_test PUBLIC ${FATParent_SOURCE_DIR}/../ddi_aco
 target_include_directories(sample_test PUBLIC ${FATParent_SOURCE_DIR}/../ddi_acontis_sdk/acontis_lib/SDK/INC/)
 target_include_directories(sample_test PUBLIC ${FATParent_SOURCE_DIR}/../ddi_acontis_sdk/acontis_lib/SDK/INC/Linux/)
 target_include_directories(sample_test PUBLIC ${FATParent_SOURCE_DIR}/../ddi_ecat_master_lib/include/)
-
-target_include_directories(sample_test PUBLIC /usr/local/MATLAB/R2022a/extern/include/)
+target_include_directories(sample_test PUBLIC /usr/local/MATLAB/R2022b/extern/include/)
 
 enable_testing()
 add_test(NAME simple_tests WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin COMMAND simple_tests)

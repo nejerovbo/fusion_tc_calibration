@@ -31,37 +31,7 @@ using namespace std;
 
 extern AcontisTestFixture *g_fixture;
 
-//-----------------------------------------------------------------------------
-// Calibration command codes for the Thermocouple slot card, these are shared 
-//  between the calibration program and the slot card, so they need to be synched.
-//-----------------------------------------------------------------------------
-#define CAL_COMMAND_DISPLAY_NORMAL          0x5A00
-#define CAL_COMMAND_DISPLAY_TC_uVOLTS       0x5A01
-#define CAL_COMMAND_DISPLAY_TC_OHMS         0x5A02
-#define CAL_COMMAND_DISPLAY_CJ_uVOLTS       0x5A03
-#define CAL_COMMAND_PREP_WRITE              0x5A0E
-#define CAL_COMMAND_WRITE_CAL_TO_FLASH      0x5A0F
 
-#define CAL_COMMAND_SET_VERSION             0x5A10
-#define CAL_COMMAND_GET_VERSION             0x5A11
-#define CAL_COMMAND_SET_DATE                0x5A12
-#define CAL_COMMAND_GET_DATE                0x5A13
-#define CAL_COMMAND_SET_UV_INTERCEPT_LO     0x5A14
-#define CAL_COMMAND_SET_UV_INTERCEPT_HI     0x5A15
-#define CAL_COMMAND_GET_UV_INTERCEPT_LO     0x5A16
-#define CAL_COMMAND_GET_UV_INTERCEPT_HI     0x5A17
-#define CAL_COMMAND_SET_UV_SLOPE_LO         0x5A18      // Channels 3 - 0
-#define CAL_COMMAND_SET_UV_SLOPE_HI         0x5A19      // Channels 7 - 4
-#define CAL_COMMAND_GET_UV_SLOPE_LO         0x5A1A      // Channels 3 - 0
-#define CAL_COMMAND_GET_UV_SLOPE_HI         0x5A1B      // Channels 7 - 4
-#define CAL_COMMAND_SET_UA_SLOPE            0x5A1C
-#define CAL_COMMAND_GET_UA_SLOPE            0x5A1D
-#define CAL_COMMAND_SET_TC_OHMS             0x5A1E
-#define CAL_COMMAND_GET_TC_OHMS             0x5A1F
-#define CAL_COMMAND_SET_CJ_INTERCEPT        0x5A20
-#define CAL_COMMAND_GET_CJ_INTERCEPT        0x5A21
-#define CAL_COMMAND_SET_CJ_SLOPE            0x5A22
-#define CAL_COMMAND_GET_CJ_SLOPE            0x5A23
 
 
 union f_to_w
@@ -103,6 +73,8 @@ void  calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, f
 float calculate_uAmp_gain(ddi_fusion_instance_t* fusion_instance, int tc_ohms);
 void  calculate_cj_parms(ddi_fusion_instance_t *fusion_instance, float *slope, int *intercept);
 
+
+void  callFevalgcd(void);
 
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
@@ -159,17 +131,19 @@ TEST_F(AcontisTestFixture, TCTest)
 
   this->go_to_op_mode(CALIBRATION_PROJECT_VERSION);
 
-  status = DC_init();
-  ASSERT_EQ(status, 1);
-
-  set_DC_range(ONE_VOLT);
-  sleep(1);
-
-  // Establish connection to DMM
-  //status = open_connection_to_meter();
+  //status = DC_init();
   //ASSERT_EQ(status, 1);
 
-  calibrate_tc(fusion_instance);
+  //set_DC_range(ONE_VOLT);
+  //sleep(1);
+
+  // Establish connection to DMM
+//  status = open_connection_to_meter();
+//  ASSERT_EQ(status, 1);
+
+  callFevalgcd();
+
+  //calibrate_tc(fusion_instance);
 
   disable_DC_out();
 }
@@ -308,12 +282,14 @@ void calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, fl
   usleep(TEN_MS);
 }
 
-#if 0
+
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 void callFevalgcd()
 {
-// Pass vector containing MATLAB data array scalar
+    printf("Feval\n");
+    printf("Feval\n");
+    // Pass vector containing MATLAB data array scalar
     using namespace matlab::engine;
 
     // Start MATLAB engine synchronously
@@ -324,16 +300,17 @@ void callFevalgcd()
 
     // Pass vector containing 2 scalar args in vector    
     std::vector<matlab::data::Array> args({
-        factory.createScalar<int16_t>(30),
+        factory.createScalar<int16_t>(40),
         factory.createScalar<int16_t>(56) });
 
     // Call MATLAB function and return result
     matlab::data::TypedArray<int16_t> result = matlabPtr->feval(u"gcd", args);
     int16_t v = result[0];
     std::cout << "Result: " << v << std::endl;
-  
+    printf("Result: %d\n", v);
+    printf("Feval\n");
 }
-#endif
+
 
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
