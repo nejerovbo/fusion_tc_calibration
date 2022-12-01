@@ -60,7 +60,7 @@ struct cal_params
 };
 
 
-void  set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *params);
+void  set_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *params);
 void  display_cal_parms(ddi_fusion_instance_t* fusion_instance);
 void  send_cal_command(ddi_fusion_instance_t* fusion_instance, int command);
 void  write_cal_to_flash(ddi_fusion_instance_t* fusion_instance);
@@ -155,48 +155,54 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
 {
   char c;
   cal_params m_params;
-  //  Set default calibration parameters in RAM of the tc slot card.
-  //  This is necessary becasue the calibratio process counts on
-  //  ideal offsets (0) and gains (1.00) to return values that can
-  //  be used to perform the calibration.
-  set_default_cal_parms(fusion_instance, &m_params);
+  
+  // Send the default calibration parameters to the card.
+  // This is necessary because the algorithm counts on "ideal" values
+  //  being applied to the readings for calibration
+  set_cal_parms(fusion_instance, &m_params);
   display_cal_parms(fusion_instance);
   
-
+  // Put the switches on the calibration field connect in thermocouple slope intercept
+  //  measure mode. This switches the DC205 voltage source to drive the thermocouple inputs
   system("ssh ubuntu@192.168.9.20 \"sudo ~/.local/bin/switch_util SI >/dev/null\"");
 
+  // Calibrate the slope and intercept for the 8 thermocopule channels
   enable_DC_out();
+  printf("Thermocouple slope and intercept measurement.\n");
   calibrate_tc_slope_and_intercept(fusion_instance, m_params.uVolt_slope, m_params.uVolt_intercept);
   disable_DC_out();
 
   printf("\n");
+  // Display the results
   for(int i = 0; i < 8; i++)
   {
     printf("channel %2d, tc slope  = %7.5f,  tc intercept   = %7.5f\n", i, m_params.uVolt_slope[i], m_params.uVolt_intercept[i]);
   }
 
-  // Calculate resistance
+  // Put the switches on the calibration field connect in the resistance measuement
+  //  mode. This shorts each pair of thermocouple inputs together to measure the
+  //  loop resistance
   system("ssh ubuntu@192.168.9.20 \"sudo ~/.local/bin/switch_util RES >/dev/null\"");
+  // Calculate resistance
+  printf("\nResistance measurement.\n");
   calculate_tc_ohms(fusion_instance, m_params.tc_ohms);
-//  m_params.uAmp_gain = calculate_uAmp_gain(fusion_instance, m_params.tc_ohms[0]);
   for(int i = 0; i < 8; i++)
   {
-    printf("tc ohms ch %d = %8d\n", i, m_params.tc_ohms[i]);
+    printf("    tc ohms ch %d = %8d\n", i, m_params.tc_ohms[i]);
   }
-
 
   system("ssh ubuntu@192.168.9.20 \"sudo ~/.local/bin/switch_util CJ >/dev/null\"");
   enable_DC_out();
+  printf("\nCold Junction slope and intercept measurement\n");
   calculate_cj_parms(fusion_instance, &m_params.cj_slope, &m_params.cj_intercept);
-
-  printf("cj offset = %f\n", m_params.cj_intercept);
-  printf("cj_gain = %f\n", m_params.cj_slope);
-
   disable_DC_out();
+
+  printf("  cj offset = %5.2f\n", m_params.cj_intercept);
+  printf("  cj_gain = %8.4f\n", m_params.cj_slope);
 
 
   // Send the real parameters to the card
-  set_default_cal_parms(fusion_instance, &m_params);
+  set_cal_parms(fusion_instance, &m_params);
 
   printf("Enter p to program the cal parameters to flash, any other key to continue\n");
   scanf("%c", &c);
@@ -230,13 +236,13 @@ void calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, fl
   for(int num_points = 0; num_points < NUM_TC_DATA_POINTS; num_points++)
   {
     voltage = num_points * ((float)TC_FULL_SCALE_VOLTS/(NUM_TC_DATA_POINTS - 1));
-    printf("voltage = %f,    ", voltage);
+    printf("\nSet voltage to  %8.2f uVolts,    ", voltage * 1000000);
     set_DC_voltage(voltage);
     usleep(ONE_SECOND);
 
     // Read value from DMM
     y.push_back(1000000 * read_meter_volts());
-    printf("meter reading = %f\n", y[num_points]);
+    printf("meter reading = %8.2f uVolts\n", y[num_points]);
 
     for(int chan = 0; chan < NUM_TC_CHANNELS; chan++)
     {
@@ -252,7 +258,7 @@ void calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, fl
         sum += value;
       }
       x[chan].push_back((float)sum/NUM_SAMPLES);
-      printf("    ch %d ave  = %f\n", chan, x[chan][num_points]);
+      printf("    ch %d ave  = %8.2f uVolts\n", chan, x[chan][num_points]);
     }
   }
 
@@ -260,11 +266,9 @@ void calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, fl
   {
 //    auto [intercept, slope] = simple_ordinary_least_squares(x[chan], y);
     auto [intercept, slope, R] = simple_ordinary_least_squares_with_R_squared(x[chan], y);
-    printf("channel %d  intercept = %f, slope = %f, R = %f\n", chan, intercept, slope, R);
     tc_slope[chan] = slope;
     tc_intercept[chan] = intercept;
   }
-
   
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
   usleep(TEN_MS);
@@ -327,7 +331,6 @@ void calculate_tc_ohms(ddi_fusion_instance_t* fusion_instance, int *tc_ohms)
   for(chan = 0; chan < NUM_TC_CHANNELS; chan++)
   {
     tc_ohms[chan] = round(sum[chan]/NUM_SAMPLES);
-    printf("chan %d tc_ohms = %d\n", chan, tc_ohms[chan]);
   }
 
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
@@ -360,13 +363,13 @@ void  calculate_cj_parms(ddi_fusion_instance_t *fusion_instance, float *slope_p,
   for(int num_points = 0; num_points < NUM_CJ_DATA_POINTS; num_points++)
   {
     voltage = num_points * ((float)CJ_FULL_SCALE_VOLTS/(NUM_CJ_DATA_POINTS - 1));
-    printf("voltage = %f,    ", voltage);
+    printf("Set voltage to %8.2f uVolts,    ", voltage * 1000000);
     set_DC_voltage(voltage);
     usleep(ONE_SECOND);
 
     // Read value from DMM
     y.push_back(1000000 * read_meter_volts());
-    printf("meter reading = %f\n", y[num_points]);
+    printf("meter reading = %8.2f uVolts\n", y[num_points]);
 
     sum = 0;
     for(int sam = 0; sam < NUM_SAMPLES; sam++)
@@ -380,12 +383,11 @@ void  calculate_cj_parms(ddi_fusion_instance_t *fusion_instance, float *slope_p,
       sum += value;
     }
     x.push_back((float)sum/NUM_SAMPLES);
-    printf("ave  = %f\n", x[num_points]);
+    printf("        ave  = %8.2f uVolts\n", x[num_points]);
   }
 
 //  auto [intercept, slope] = simple_ordinary_least_squares(x[chan], y);
   auto [intercept, slope, R] = simple_ordinary_least_squares_with_R_squared(x, y);
-  printf("intercept = %f, slope = %f, R = %f\n", intercept, slope, R);
 
   *slope_p = slope;
   *intercept_p = intercept;
@@ -436,7 +438,7 @@ void write_cal_to_flash(ddi_fusion_instance_t* fusion_instance)
 //  then send the command, then send the "normal" command to keep the 
 //  data from being overwritten.
 //-----------------------------------------------------------------------------
-void set_default_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m_params)
+void set_cal_parms(ddi_fusion_instance_t* fusion_instance, cal_params *m_params)
 {
   int date[] = {2000, 1, 1, 0, 0, 0, 0, 0};
 
