@@ -32,8 +32,6 @@ using namespace std;
 extern AcontisTestFixture *g_fixture;
 
 
-
-
 union f_to_w
 {
     float fl;
@@ -68,11 +66,11 @@ void  send_cal_command(ddi_fusion_instance_t* fusion_instance, int command);
 void  write_cal_to_flash(ddi_fusion_instance_t* fusion_instance);
 void  calibrate_tc(ddi_fusion_instance_t* fusion_instance);
 void  calculate_tc_params(ddi_fusion_instance_t* fusion_instance, float uVolt_gain[], int uVolt_offset[]);
-void  calculate_tc_ohms(ddi_fusion_instance_t* fusion_instance, int *tc_ohms, int num_tc_channels);
+void  calculate_tc_ohms(ddi_fusion_instance_t* fusion_instance, int *tc_ohms);
 void  calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, float uVolt_gain[], float uVolt_offset[]);
 float calculate_uAmp_gain(ddi_fusion_instance_t* fusion_instance, int tc_ohms);
-void  calculate_cj_parms(ddi_fusion_instance_t *fusion_instance, float *slope, int *intercept);
-
+void  calculate_cj_parms(ddi_fusion_instance_t *fusion_instance, float *slope, float *intercept);
+void  temp_display(ddi_fusion_instance_t* fusion_instance);
 
 void  callFevalgcd(void);
 
@@ -131,19 +129,20 @@ TEST_F(AcontisTestFixture, TCTest)
 
   this->go_to_op_mode(CALIBRATION_PROJECT_VERSION);
 
-  //status = DC_init();
-  //ASSERT_EQ(status, 1);
+  status = DC_init();
+  ASSERT_EQ(status, 1);
 
-  //set_DC_range(ONE_VOLT);
-  //sleep(1);
+  set_DC_range(TEN_VOLTS);
+  sleep(1);
+  enable_DC_out();
 
   // Establish connection to DMM
-//  status = open_connection_to_meter();
-//  ASSERT_EQ(status, 1);
+  status = open_connection_to_meter();
+  ASSERT_EQ(status, 1);
 
-  callFevalgcd();
+//  callFevalgcd();
 
-  //calibrate_tc(fusion_instance);
+  calibrate_tc(fusion_instance);
 
   disable_DC_out();
 }
@@ -163,9 +162,8 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
   set_default_cal_parms(fusion_instance, &m_params);
   display_cal_parms(fusion_instance);
   
-  printf("Hook DC205 to the tc inputs, hit any key to continue\n");
-  sleep(1);
-  getchar();
+
+  system("ssh ubuntu@192.168.9.20 \"sudo ~/.local/bin/switch_util SI >/dev/null\"");
 
   enable_DC_out();
   calibrate_tc_slope_and_intercept(fusion_instance, m_params.uVolt_slope, m_params.uVolt_intercept);
@@ -177,14 +175,9 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
     printf("channel %2d, tc slope  = %7.5f,  tc intercept   = %7.5f\n", i, m_params.uVolt_slope[i], m_params.uVolt_intercept[i]);
   }
 
-#if 0
-
-
-  printf("\n\nPlug in the shorting connector to measure resistance.\n");
-  getchar();
-
   // Calculate resistance
-  calculate_tc_ohms(fusion_instance, m_params.tc_ohms, NUM_TC_CHANNELS);
+  system("ssh ubuntu@192.168.9.20 \"sudo ~/.local/bin/switch_util RES >/dev/null\"");
+  calculate_tc_ohms(fusion_instance, m_params.tc_ohms);
 //  m_params.uAmp_gain = calculate_uAmp_gain(fusion_instance, m_params.tc_ohms[0]);
   for(int i = 0; i < 8; i++)
   {
@@ -192,19 +185,14 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
   }
 
 
-  printf("\n\nHook the DC205 to the CJ inputs, hit any key to continue\n");
-  getchar();
-
+  system("ssh ubuntu@192.168.9.20 \"sudo ~/.local/bin/switch_util CJ >/dev/null\"");
   enable_DC_out();
-  calculate_cj_parms(fusion_instance, &m_params.cj_gain, &m_params.cj_offset);
+  calculate_cj_parms(fusion_instance, &m_params.cj_slope, &m_params.cj_intercept);
 
-  printf("cj offset = %d\n", m_params.cj_offset);
-  printf("cj_gain = %f\n", m_params.cj_gain);
+  printf("cj offset = %f\n", m_params.cj_intercept);
+  printf("cj_gain = %f\n", m_params.cj_slope);
+
   disable_DC_out();
-
-
-#endif
-
 
 
   // Send the real parameters to the card
@@ -312,75 +300,101 @@ void callFevalgcd()
 }
 
 
+
+#define FOUR_SECONDS  4000000
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
-void calculate_tc_ohms(ddi_fusion_instance_t* fusion_instance, int *tc_ohms, int num_channels)
+void calculate_tc_ohms(ddi_fusion_instance_t* fusion_instance, int *tc_ohms)
 {
-  int   sum;
+  int   sum[NUM_TC_CHANNELS] = {0, 0, 0, 0, 0, 0, 0, 0};
+  int   chan;
 
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_TC_OHMS);
   usleep(TEN_MS);
 
-  for(int chan = 0; chan < num_channels; chan++)
-  {
-    sum = 0;
-    for(int samples = 0; samples < NUM_SAMPLES; samples++)
-    {
-      int value;
-      usleep(HUNDRED_MS);   // New samples every 400 ms
-      usleep(HUNDRED_MS);   // New samples every 400 ms
-      usleep(HUNDRED_MS);   // New samples every 400 ms
-      usleep(HUNDRED_MS);   // New samples every 400 ms
-      value = (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + chan * 2)) & 0xFFFF;
-      value += ((ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + (chan * 2) + 1)) & 0xFFFF) << 16;      
-      sum += value;
-    }
-    tc_ohms[chan] = round(sum/NUM_SAMPLES);
-    printf("chan %d tc_ohms = %d\n", chan, tc_ohms[chan]);
-  }
-  printf("\n");
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
-  usleep(TEN_MS);
-
-}
-
-
-#define RES_VALUE   200
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-float   calculate_uAmp_gain(ddi_fusion_instance_t* fusion_instance, int tc_ohms)
-{
-    int   sum, average;
-    float uAmp_gain;
-
-  printf("Change switches to resistors, hit any key to continue\n");
-  getchar();
-
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_TC_OHMS);
-  usleep(TEN_MS);
-
-  sum = 0;
   for(int samples = 0; samples < NUM_SAMPLES; samples++)
   {
-    int value;
-    usleep(HUNDRED_MS);   // New samples every 400 ms
-    usleep(HUNDRED_MS);   // New samples every 400 ms
-    usleep(HUNDRED_MS);   // New samples every 400 ms
-    usleep(HUNDRED_MS);   // New samples every 400 ms
-    value = (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL )) & 0xFFFF;
-    value += ((ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + 1)) & 0xFFFF) << 16;      
-    sum += value;
+    usleep(FOUR_SECONDS);
+    for(chan = 0; chan < NUM_TC_CHANNELS; chan++)
+    {
+      int value;
+      value = (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + chan * 2)) & 0xFFFF;
+      value += ((ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + (chan * 2) + 1)) & 0xFFFF) << 16;      
+      sum[chan] += value;
+    }
   }
-  average = round(sum/NUM_SAMPLES);
-  average -= tc_ohms;
-  uAmp_gain = (float)RES_VALUE/average;
-  printf("uAmp_gain = %f\n", uAmp_gain);
 
-  printf("\n");
+  for(chan = 0; chan < NUM_TC_CHANNELS; chan++)
+  {
+    tc_ohms[chan] = round(sum[chan]/NUM_SAMPLES);
+    printf("chan %d tc_ohms = %d\n", chan, tc_ohms[chan]);
+  }
+
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
   usleep(TEN_MS);
-  return uAmp_gain;
+
 }
+
+
+
+#define NUM_CJ_DATA_POINTS    5
+#define CJ_FULL_SCALE_VOLTS   1.00
+//-----------------------------------------------------------------------------
+// Calculate slope and intercept
+//   slope = (y2 - y1)/( x2 - x1)
+//     where y is meter readings and x is adc readings 
+//-----------------------------------------------------------------------------
+void  calculate_cj_parms(ddi_fusion_instance_t *fusion_instance, float *slope_p, float *intercept_p)
+{
+  using boost::math::statistics::simple_ordinary_least_squares;
+  using boost::math::statistics::simple_ordinary_least_squares_with_R_squared;
+  vector<double> x;
+  vector<double> y;
+
+  int sum, value;
+  float voltage;
+
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_CJ_uVOLTS);
+  usleep(TEN_MS);
+
+  for(int num_points = 0; num_points < NUM_CJ_DATA_POINTS; num_points++)
+  {
+    voltage = num_points * ((float)CJ_FULL_SCALE_VOLTS/(NUM_CJ_DATA_POINTS - 1));
+    printf("voltage = %f,    ", voltage);
+    set_DC_voltage(voltage);
+    usleep(ONE_SECOND);
+
+    // Read value from DMM
+    y.push_back(1000000 * read_meter_volts());
+    printf("meter reading = %f\n", y[num_points]);
+
+    sum = 0;
+    for(int sam = 0; sam < NUM_SAMPLES; sam++)
+    {
+      usleep(HUNDRED_MS);
+      usleep(HUNDRED_MS);
+      usleep(HUNDRED_MS);
+      usleep(HUNDRED_MS);
+      value =   ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + 0) & 0xFFFF;
+      value += (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + 1) & 0xFFFF) << 16;
+      sum += value;
+    }
+    x.push_back((float)sum/NUM_SAMPLES);
+    printf("ave  = %f\n", x[num_points]);
+  }
+
+//  auto [intercept, slope] = simple_ordinary_least_squares(x[chan], y);
+  auto [intercept, slope, R] = simple_ordinary_least_squares_with_R_squared(x, y);
+  printf("intercept = %f, slope = %f, R = %f\n", intercept, slope, R);
+
+  *slope_p = slope;
+  *intercept_p = intercept;
+  
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
+  usleep(TEN_MS);
+}
+
+
 
 
 //-----------------------------------------------------------------------------
@@ -617,4 +631,68 @@ void display_cal_parms(ddi_fusion_instance_t* fusion_instance)
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL ,CAL_COMMAND_DISPLAY_NORMAL);
   printf("\n\n");
 
+}
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void temp_display(ddi_fusion_instance_t* fusion_instance)
+{
+  int value;
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_TC_uVOLTS);
+  usleep(TEN_MS);
+
+  for(int num_points = 0; num_points < 100; num_points++)
+  {
+    for(int chan = 0; chan < NUM_TC_CHANNELS; chan++)
+    {
+
+      usleep(HUNDRED_MS);
+      usleep(HUNDRED_MS);
+      usleep(HUNDRED_MS);
+      usleep(HUNDRED_MS);
+      value =   ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + (chan * 2) + 0) & 0xFFFF;
+      value += (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + (chan * 2) + 1) & 0xFFFF) << 16;
+      printf("    %8d", value);
+    }
+    printf("\n");
+  }
+}
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+
+#define RES_VALUE   200
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+float   calculate_uAmp_gain(ddi_fusion_instance_t* fusion_instance, int tc_ohms)
+{
+    int   sum, average;
+    float uAmp_gain;
+
+  printf("Change switches to resistors, hit any key to continue\n");
+  getchar();
+
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_TC_OHMS);
+  usleep(TEN_MS);
+
+  sum = 0;
+  for(int samples = 0; samples < NUM_SAMPLES; samples++)
+  {
+    int value;
+    usleep(HUNDRED_MS);   // New samples every 400 ms
+    usleep(HUNDRED_MS);   // New samples every 400 ms
+    usleep(HUNDRED_MS);   // New samples every 400 ms
+    usleep(HUNDRED_MS);   // New samples every 400 ms
+    value = (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL )) & 0xFFFF;
+    value += ((ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + 1)) & 0xFFFF) << 16;      
+    sum += value;
+  }
+  average = round(sum/NUM_SAMPLES);
+  average -= tc_ohms;
+  uAmp_gain = (float)RES_VALUE/average;
+  printf("uAmp_gain = %f\n", uAmp_gain);
+
+  printf("\n");
+  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
+  usleep(TEN_MS);
+  return uAmp_gain;
 }

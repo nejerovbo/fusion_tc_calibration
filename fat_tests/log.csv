@@ -20999,3 +20999,2808 @@ Scan rate 0 (us)
 0x2011.0B Slot Fan Status = -100.000000 
 0x2011.0C Power Fan RPM = 0.000000 
 0x2011.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-24 00:20:14 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 39.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-23 23:38:17 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-23 23:38:46 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 35.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-23 23:41:14 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number =  
+0x2000.02 Firmware Version =  
+0x2000.03 Serial Number =  
+0x2000.04 IPv4 =  
+0x2000.05 MAC address =  
+0x2000.06 Configuration MD5 =  len 0
+0x2000.07 MD5 Date =  
+0x2000.08 Clock =  
+0x2000.09 Event Mask = 0x0000 len 0 
+0x2000.0A Event Status = 0x0000 len 0 
+0x2000.0B Detect Modules Override = 0x0000 
+0x2000.0D CPU Fan Status = 0.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 0.0000
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-23 23:38:39 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 25.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-24 01:16:28 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-24 01:19:06 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-24 01:32:27 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-24 04:49:43 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-24 08:43:31 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-24 08:59:55 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-24 09:14:40 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-24 23:54:19 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-24 23:57:52 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-24 23:58:55 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-24 23:59:21 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:00:00 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:01:09 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:01:51 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:03:33 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:06:23 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:07:25 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:09:20 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:10:51 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:17:17 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:19:20 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:20:35 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:21:28 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:22:51 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:23:04 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:24:08 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:24:54 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:34:16 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:39:54 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:40:50 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 00:41:59 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 01:10:40 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 01:11:19 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 01:12:09 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 01:13:04 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 01:17:36 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 01:18:11 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 01:19:03 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 38.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 01:47:53 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 01:56:26 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 01:57:47 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 02:02:24 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 02:02:58 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 02:04:19 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 02:09:04 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 02:14:23 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.0000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 02:35:23 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 36.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 05:30:39 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 05:54:19 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 
+*******************************
+Scan rate 0 (us) 
+0x2000.01 Part Number =  
+0x2000.01 Part Number = 10-200201-00 
+0x2000.02 Firmware Version = 6c.0 
+0x2000.03 Serial Number = 200201-0006 
+0x2000.04 IPv4 = 192.168.9.50 
+0x2000.05 MAC address = 00:0A:35:00:1E:53 
+0x2000.06 Configuration MD5 = d812237bb2ce082ca11b9ba len 24
+0x2000.07 MD5 Date = 2022-11-29 
+0x2000.08 Clock = 2022-09-25 06:04:58 
+0x2000.09 Event Mask = 0xffffffff len 4 
+0x2000.0A Event Status = 0x0700 len 4 
+0x2000.0B Detect Modules Override = 0x0001 
+0x2000.0D CPU Fan Status = -100.0000
+0x2000.0E CPU Fan RPM = 0.0000
+0x2000.0F CPU Fan temp = 37.5000
+
+***Info for Active RIM port 5 
+
+0x2051.01 Part Number w = 12-200201-00 
+0x2051.02 Firmware Version = 0e 
+0x2051.03 Serial Number = 2002010006 
+0x2051.04 Type = 24-slot 
+0x2051.05 Unit Information = FUSION CRAM LOW SIDE 
+0x2051.06 Slot Cards =  len 48 
+0x2051.07 Event Mask = 0xffffffff 
+0x2051.08 Event Status = 0x7702 
+0x2051.0A Power Fan Status = -100.000000 
+0x2051.0B Slot Fan Status = -100.000000 
+0x2051.0C Power Fan RPM = 0.000000 
+0x2051.0D Slot Fan RPM = 0.000000 

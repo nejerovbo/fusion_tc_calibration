@@ -184,7 +184,7 @@ ddi_em_interface_select ddi_fusion_uart_test_fixture::FindNic()
     return DDI_EM_NIC_4;
     break;
   default:
-    return DDI_EM_NIC_2;
+    return DDI_EM_NIC_1;
     break;
   } 
 }

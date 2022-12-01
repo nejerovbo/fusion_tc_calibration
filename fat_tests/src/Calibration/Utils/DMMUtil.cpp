@@ -17,7 +17,6 @@ using namespace std;
 int connected_to_meter = 0;
 
 int open_connection_to_meter(void) {
-  printf("meter \n");
   //open a connection to the keysight meter...
   // this needs a lot more error checking, and friendlier error messages.
   //printf("DEBUG Opening connection to meter.\n");
@@ -31,7 +30,6 @@ int open_connection_to_meter(void) {
   telnet_verbose(0);
   get_input(0); //get (and don't show) input/banner message.
   connected_to_meter = 1;
-  printf("meter done\n");
   return connected_to_meter;
 }
 

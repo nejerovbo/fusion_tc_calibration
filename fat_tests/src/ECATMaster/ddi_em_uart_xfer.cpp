@@ -38,13 +38,13 @@ prior written authorization of DDI is prohibited.
 //-----------------------------------------------------------------------------
 
 
-#define UART_START_INDEX    0x5095  // 5095 for RIM 3
-#define UART_CHANNEL        0       // Of 0, 1, 2, or 3
-#define THIS_NIC            DDI_EM_NIC_1
-#define CONFIG_FILE         "config/platform_eni.xml"
+#define UART_START_INDEX    0x5105  // 5095 for RIM 3
+#define UART_CHANNEL        3       // Of 0, 1, 2, or 3
+#define THIS_NIC            DDI_EM_NIC_4
+#define CONFIG_FILE         "config/12-200805-01_eni.xml"
 #define TTY_FILE            "/dev/ttyUSB0"
-//#define UART_INTERFACE_MODE UART_INTERFACE_RS232
-#define UART_INTERFACE_MODE UART_INTERFACE_RS485
+#define UART_INTERFACE_MODE UART_INTERFACE_RS232
+//#define UART_INTERFACE_MODE UART_INTERFACE_RS485
 
 
 
@@ -128,6 +128,7 @@ TEST(UART_XFER_SUITE, DDIEM_UART_Xfer)
   //-----------------------------------------------------------------------------
   for( int loop = 0; loop < 256; loop++)
   {
+    uint32_t len;
     printf("loop = %3d\r", loop);  fflush(stdout);  // Print the loop count on the same line
 
     // Create random data in the 2 tx buffers
@@ -135,6 +136,14 @@ TEST(UART_XFER_SUITE, DDIEM_UART_Xfer)
     {
       tx1_data[count] = rand();
       tx2_data[count] = rand();
+    }
+
+    // If there is already data in the UART receive buffer, clear it out
+    //  before starting the transfers.
+    result = ddi_fusion_uart_get_rx_bytes_avail(uart_handle, &rx1_len);
+    if(rx1_len != 0)
+    {
+      result = ddi_fusion_uart_rx_data(uart_handle, rx1_data, &len);
     }
 
     // Transmist data from the host, USB RS232/RS485 dongle,  to the fusion
@@ -149,7 +158,7 @@ TEST(UART_XFER_SUITE, DDIEM_UART_Xfer)
     memset(rx1_data, 0, sizeof(rx1_data));
     memset(rx2_data, 0x00, sizeof(rx2_data));
 
-    usleep(60000);  // Wait for the transfer to complete
+    usleep(100000);  // Wait for the transfer to complete
 
     //-------------------------------------
     // Receive and compare the data sent to the UART
@@ -161,15 +170,28 @@ TEST(UART_XFER_SUITE, DDIEM_UART_Xfer)
       ASSERT_EQ(DDI_EM_STATUS_OK, result) << "ddi_fusion_uart_get_rx_bytes_avail failed\n";
     }
 
-    uint32_t len;
     result = ddi_fusion_uart_rx_data(uart_handle, rx1_data, &len);
     ASSERT_EQ(DDI_EM_STATUS_OK, result) << "ddi_fusion_uart_rx_data failed \n";
+    for(int i = 0; i < 256; i++)
+    {
+      if(rx1_data[i] != tx1_data[i])
+      {
+        printf("count = %3d, rx1 = %2x, tx1 = %2x\n", i, rx1_data[i], tx1_data[i]);
+      }
+    }
     ASSERT_EQ( memcmp(rx1_data, tx1_data, sizeof(tx1_data)), 0 );
 
     //-------------------------------------
     // Receive and compare the data sent to the host 
     //-------------------------------------
     rx2_len = read(fd_serial, rx2_data, sizeof(rx2_data));
+    for(int i = 0; i < 256; i++)
+    {
+      if(rx2_data[i] != tx2_data[i])
+      {
+        printf("count = %3d, rx = %2x, tx = %2x\n", i, rx2_data[i], tx2_data[i]);
+      }
+    }
     ASSERT_EQ( memcmp(rx2_data, tx2_data, sizeof(tx2_data)), 0 );
   }
 
