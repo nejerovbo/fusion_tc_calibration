@@ -145,6 +145,7 @@ TEST_F(AcontisTestFixture, TCVerify)
   char c;
   int status, meter_status;
 
+
   VERIFIER callBack(this);
   // Open Fusion Instance
   open_fusion(&callBack);
@@ -157,6 +158,7 @@ TEST_F(AcontisTestFixture, TCVerify)
 
   this->go_to_op_mode(CALIBRATION_PROJECT_VERSION);
 
+
   // Establish connection to DC-205
   status = DC_init();
   ASSERT_EQ(status, 1);
@@ -167,12 +169,22 @@ TEST_F(AcontisTestFixture, TCVerify)
   meter_status = open_connection_to_meter();
   ASSERT_EQ(meter_status, 1);
 
+
+
   display_cal_parms(fusion_instance);
 
-  sleep(1);
+  // Put the switches on the calibration field connect in thermocouple slope intercept
+  //  measure mode. This switches the DC205 voltage source to drive the thermocouple inputs
+  system("ssh ubuntu@192.168.9.20 \"sudo ~/.local/bin/switch_util SI >/dev/null\"");
 
+  // Calibrate the slope and intercept for the 8 thermocopule channels
+  enable_DC_out();
   verify_tc(fusion_instance);
-//  verify_cj(fusion_instance);
+
+  // Put the switches on the calibration field connect in thermocouple slope intercept
+  //  measure mode. This switches the DC205 voltage source to drive the thermocouple inputs
+//  system("ssh ubuntu@192.168.9.20 \"sudo ~/.local/bin/switch_util CJ >/dev/null\"");
+// verify_cj(fusion_instance);
 
   display_cal_parms(fusion_instance);
 

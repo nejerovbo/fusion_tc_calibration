@@ -21,7 +21,6 @@
 #include <thread>
 #include <termios.h>
 #include <fcntl.h>
-#include <boost/math/statistics/linear_regression.hpp>
 #include "MatlabDataArray.hpp"
 #include "MatlabEngine.hpp"
 #include <iostream>
@@ -44,7 +43,7 @@ union f_to_w
 #define NUM_TC_CHANNELS   8
 #define NUM_SAMPLES       20
 
-#define TC_FULL_SCALE_VOLTS  .070    // 70 milli-volts
+
 
 #define TC_OFFSET_NORMAL  0
 #define TC_PARM_REG       8
@@ -68,11 +67,7 @@ void  calibrate_tc(ddi_fusion_instance_t* fusion_instance);
 void  calculate_tc_params(ddi_fusion_instance_t* fusion_instance, float uVolt_gain[], int uVolt_offset[]);
 void  calculate_tc_ohms(ddi_fusion_instance_t* fusion_instance, int *tc_ohms);
 void  calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, float uVolt_gain[], float uVolt_offset[]);
-float calculate_uAmp_gain(ddi_fusion_instance_t* fusion_instance, int tc_ohms);
 void  calculate_cj_parms(ddi_fusion_instance_t *fusion_instance, float *slope, float *intercept);
-void  temp_display(ddi_fusion_instance_t* fusion_instance);
-
-void  callFevalgcd(void);
 
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
@@ -140,8 +135,6 @@ TEST_F(AcontisTestFixture, TCTest)
   status = open_connection_to_meter();
   ASSERT_EQ(status, 1);
 
-//  callFevalgcd();
-
   calibrate_tc(fusion_instance);
 
   disable_DC_out();
@@ -179,6 +172,7 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
     printf("channel %2d, tc slope  = %7.5f,  tc intercept   = %7.5f\n", i, m_params.uVolt_slope[i], m_params.uVolt_intercept[i]);
   }
 
+
   // Put the switches on the calibration field connect in the resistance measuement
   //  mode. This shorts each pair of thermocouple inputs together to measure the
   //  loop resistance
@@ -191,6 +185,8 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
     printf("    tc ohms ch %d = %8d\n", i, m_params.tc_ohms[i]);
   }
 
+  // Put the switches on the calibration field connect in thermocouple cold junction
+  //  measure mode. This switches the DC205 voltage source to drive the cold junction inputs
   system("ssh ubuntu@192.168.9.20 \"sudo ~/.local/bin/switch_util CJ >/dev/null\"");
   enable_DC_out();
   printf("\nCold Junction slope and intercept measurement\n");
@@ -200,7 +196,7 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
   printf("  cj offset = %5.2f\n", m_params.cj_intercept);
   printf("  cj_gain = %8.4f\n", m_params.cj_slope);
 
-
+#if 0
   // Send the real parameters to the card
   set_cal_parms(fusion_instance, &m_params);
 
@@ -210,32 +206,34 @@ void calibrate_tc(ddi_fusion_instance_t* fusion_instance)
   {
     write_cal_to_flash(fusion_instance);
   }
+#endif
 }
 
 
+#define TC_LOW_VOLTAGE        -.005   // - 5 milli-volts
+#define TC_HIGH_VOLTAGE       .070    // 70 milli-volts
 #define NUM_TC_DATA_POINTS  5   // Numer of data points to be collected to
                                 //  generate the linear regression
-#undef NUM_SAMPLES
-#define NUM_SAMPLES 5   // debug only
 
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 void calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, float tc_slope[], float tc_intercept[])
 {
-  using boost::math::statistics::simple_ordinary_least_squares;
-  using boost::math::statistics::simple_ordinary_least_squares_with_R_squared;
+  using namespace matlab::engine;
+  matlab::data::ArrayFactory factory;
   vector<double> x[NUM_TC_CHANNELS];
   vector<double> y;
 
-  int sum, value;
+  int sum[NUM_TC_CHANNELS], value, chan;
   float voltage;
 
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_TC_uVOLTS);
   usleep(TEN_MS);
 
+  // Generate X and Y for all of the voltages
   for(int num_points = 0; num_points < NUM_TC_DATA_POINTS; num_points++)
   {
-    voltage = num_points * ((float)TC_FULL_SCALE_VOLTS/(NUM_TC_DATA_POINTS - 1));
+    voltage = TC_LOW_VOLTAGE + (num_points * ((float)(TC_HIGH_VOLTAGE - TC_LOW_VOLTAGE)/(NUM_TC_DATA_POINTS - 1)));
     printf("\nSet voltage to  %8.2f uVolts,    ", voltage * 1000000);
     set_DC_voltage(voltage);
     usleep(ONE_SECOND);
@@ -244,65 +242,60 @@ void calibrate_tc_slope_and_intercept(ddi_fusion_instance_t* fusion_instance, fl
     y.push_back(1000000 * read_meter_volts());
     printf("meter reading = %8.2f uVolts\n", y[num_points]);
 
-    for(int chan = 0; chan < NUM_TC_CHANNELS; chan++)
+    // Clear the sum for every channel
+    for(chan = 0; chan < NUM_TC_CHANNELS; chan++)
     {
-      sum = 0;
-      for(int sam = 0; sam < NUM_SAMPLES; sam++)
+      sum[chan] = 0;
+    }
+
+    for(int sam = 0; sam < NUM_SAMPLES; sam++)
+    {
+      usleep(HUNDRED_MS);   // Only delay once for each sample
+      usleep(HUNDRED_MS);
+      usleep(HUNDRED_MS);
+      usleep(HUNDRED_MS);
+      for(chan = 0; chan < NUM_TC_CHANNELS; chan++)
       {
-        usleep(HUNDRED_MS);
-        usleep(HUNDRED_MS);
-        usleep(HUNDRED_MS);
-        usleep(HUNDRED_MS);
         value =   ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + (chan * 2) + 0) & 0xFFFF;
         value += (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + (chan * 2) + 1) & 0xFFFF) << 16;
-        sum += value;
+        sum[chan] += value;
       }
-      x[chan].push_back((float)sum/NUM_SAMPLES);
+    }
+
+    for(chan = 0; chan < NUM_TC_CHANNELS; chan++)
+    {
+      x[chan].push_back((float)sum[chan]/NUM_SAMPLES);
       printf("    ch %d ave  = %8.2f uVolts\n", chan, x[chan][num_points]);
+  
     }
   }
 
-  for(int chan = 0; chan < NUM_TC_CHANNELS; chan++)
+  // Curve fit using matlab
+  // Start MATLAB engine
+  std::unique_ptr<MATLABEngine> matlabPtr = startMATLAB();
+
+  for(chan = 0; chan < NUM_TC_CHANNELS; chan++)
   {
-//    auto [intercept, slope] = simple_ordinary_least_squares(x[chan], y);
-    auto [intercept, slope, R] = simple_ordinary_least_squares_with_R_squared(x[chan], y);
-    tc_slope[chan] = slope;
-    tc_intercept[chan] = intercept;
+    // Create arrays with the data points from above 
+    auto inputArrayX = factory.createArray({ 1, NUM_TC_DATA_POINTS }, x[chan].cbegin(), x[chan].cend());
+    auto inputArrayY = factory.createArray({ 1, NUM_TC_DATA_POINTS }, y.cbegin(), y.cend());
+
+    // Create the arguments to pass to polyfit
+    std::vector<matlab::data::Array> args({ 
+      inputArrayX, 
+      inputArrayY, 
+      factory.createScalar<int16_t>(1) }); // 1st-order polynomial, a straight-line
+
+    // Pass data array to MATLAB function and return results.
+    auto result = matlabPtr->feval(u"polyfit", args);
+
+    tc_slope[chan] = result[0];
+    tc_intercept[chan] = result[1];
   }
-  
+
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
   usleep(TEN_MS);
 }
-
-
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-void callFevalgcd()
-{
-    printf("Feval\n");
-    printf("Feval\n");
-    // Pass vector containing MATLAB data array scalar
-    using namespace matlab::engine;
-
-    // Start MATLAB engine synchronously
-    std::unique_ptr<MATLABEngine> matlabPtr = startMATLAB();
-
-    // Create MATLAB data array factory
-    matlab::data::ArrayFactory factory;
-
-    // Pass vector containing 2 scalar args in vector    
-    std::vector<matlab::data::Array> args({
-        factory.createScalar<int16_t>(40),
-        factory.createScalar<int16_t>(56) });
-
-    // Call MATLAB function and return result
-    matlab::data::TypedArray<int16_t> result = matlabPtr->feval(u"gcd", args);
-    int16_t v = result[0];
-    std::cout << "Result: " << v << std::endl;
-    printf("Result: %d\n", v);
-    printf("Feval\n");
-}
-
 
 
 #define FOUR_SECONDS  4000000
@@ -313,11 +306,18 @@ void calculate_tc_ohms(ddi_fusion_instance_t* fusion_instance, int *tc_ohms)
   int   sum[NUM_TC_CHANNELS] = {0, 0, 0, 0, 0, 0, 0, 0};
   int   chan;
 
+  int   resistance[NUM_TC_CHANNELS][NUM_SAMPLES];
+
+  FILE *fp1;
+  fp1 = fopen("resistance.csv", "w");
+
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_TC_OHMS);
   usleep(TEN_MS);
 
+  fprintf(fp1, "samples,");
   for(int samples = 0; samples < NUM_SAMPLES; samples++)
   {
+    fprintf(fp1, "%d,", samples);
     usleep(FOUR_SECONDS);
     for(chan = 0; chan < NUM_TC_CHANNELS; chan++)
     {
@@ -325,17 +325,30 @@ void calculate_tc_ohms(ddi_fusion_instance_t* fusion_instance, int *tc_ohms)
       value = (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + chan * 2)) & 0xFFFF;
       value += ((ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + (chan * 2) + 1)) & 0xFFFF) << 16;      
       sum[chan] += value;
+      resistance[chan][samples] = value;
     }
   }
-
+  fprintf(fp1, "\n");
   for(chan = 0; chan < NUM_TC_CHANNELS; chan++)
   {
     tc_ohms[chan] = round(sum[chan]/NUM_SAMPLES);
   }
 
+  for(chan = 0; chan < NUM_TC_CHANNELS; chan++)
+  {
+    fprintf(fp1, "channel %d,", chan);
+    for(int samples = 0; samples < NUM_SAMPLES; samples++)
+    {
+      fprintf(fp1, "%d,", resistance[chan][samples]);
+    }
+    fprintf(fp1, "\n");
+  }
+
+
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
   usleep(TEN_MS);
 
+  fclose(fp1);
 }
 
 
@@ -349,8 +362,8 @@ void calculate_tc_ohms(ddi_fusion_instance_t* fusion_instance, int *tc_ohms)
 //-----------------------------------------------------------------------------
 void  calculate_cj_parms(ddi_fusion_instance_t *fusion_instance, float *slope_p, float *intercept_p)
 {
-  using boost::math::statistics::simple_ordinary_least_squares;
-  using boost::math::statistics::simple_ordinary_least_squares_with_R_squared;
+  using namespace matlab::engine;
+  matlab::data::ArrayFactory factory;
   vector<double> x;
   vector<double> y;
 
@@ -386,17 +399,32 @@ void  calculate_cj_parms(ddi_fusion_instance_t *fusion_instance, float *slope_p,
     printf("        ave  = %8.2f uVolts\n", x[num_points]);
   }
 
-//  auto [intercept, slope] = simple_ordinary_least_squares(x[chan], y);
-  auto [intercept, slope, R] = simple_ordinary_least_squares_with_R_squared(x, y);
+  // Curve fit using matlab
+  // Start MATLAB engine
+  std::unique_ptr<MATLABEngine> matlabPtr = startMATLAB();
 
-  *slope_p = slope;
-  *intercept_p = intercept;
-  
+  // Now do the matlab
+  // Create a arrays with the data points from above 
+  auto inputArrayX = factory.createArray({ 1, NUM_TC_DATA_POINTS }, x.cbegin(), x.cend());
+  auto inputArrayY = factory.createArray({ 1, NUM_TC_DATA_POINTS }, y.cbegin(), y.cend());
+
+  // Create the arguments to pass to polyfit
+  std::vector<matlab::data::Array> args({ 
+    inputArrayX, 
+    inputArrayY, 
+    factory.createScalar<int16_t>(1) }); // 1st-order polynomial, a straight-line
+
+  // Pass data array to MATLAB sqrt function and return results.
+  auto result = matlabPtr->feval(u"polyfit", args);
+
+  double mslope = result[0];
+  double mintercept = result[1];
+  *slope_p = result[0];
+  *intercept_p = result[1];
+
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
   usleep(TEN_MS);
 }
-
-
 
 
 //-----------------------------------------------------------------------------
@@ -633,68 +661,4 @@ void display_cal_parms(ddi_fusion_instance_t* fusion_instance)
   ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL ,CAL_COMMAND_DISPLAY_NORMAL);
   printf("\n\n");
 
-}
-
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-void temp_display(ddi_fusion_instance_t* fusion_instance)
-{
-  int value;
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_TC_uVOLTS);
-  usleep(TEN_MS);
-
-  for(int num_points = 0; num_points < 100; num_points++)
-  {
-    for(int chan = 0; chan < NUM_TC_CHANNELS; chan++)
-    {
-
-      usleep(HUNDRED_MS);
-      usleep(HUNDRED_MS);
-      usleep(HUNDRED_MS);
-      usleep(HUNDRED_MS);
-      value =   ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + (chan * 2) + 0) & 0xFFFF;
-      value += (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + (chan * 2) + 1) & 0xFFFF) << 16;
-      printf("    %8d", value);
-    }
-    printf("\n");
-  }
-}
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-
-#define RES_VALUE   200
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-float   calculate_uAmp_gain(ddi_fusion_instance_t* fusion_instance, int tc_ohms)
-{
-    int   sum, average;
-    float uAmp_gain;
-
-  printf("Change switches to resistors, hit any key to continue\n");
-  getchar();
-
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_TC_OHMS);
-  usleep(TEN_MS);
-
-  sum = 0;
-  for(int samples = 0; samples < NUM_SAMPLES; samples++)
-  {
-    int value;
-    usleep(HUNDRED_MS);   // New samples every 400 ms
-    usleep(HUNDRED_MS);   // New samples every 400 ms
-    usleep(HUNDRED_MS);   // New samples every 400 ms
-    usleep(HUNDRED_MS);   // New samples every 400 ms
-    value = (ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL )) & 0xFFFF;
-    value += ((ddi_sdk_fusion_get_ain(fusion_instance, TC_OFFSET_NORMAL + 1)) & 0xFFFF) << 16;      
-    sum += value;
-  }
-  average = round(sum/NUM_SAMPLES);
-  average -= tc_ohms;
-  uAmp_gain = (float)RES_VALUE/average;
-  printf("uAmp_gain = %f\n", uAmp_gain);
-
-  printf("\n");
-  ddi_sdk_fusion_set_aout(fusion_instance, TC_OFFSET_NORMAL, CAL_COMMAND_DISPLAY_NORMAL);
-  usleep(TEN_MS);
-  return uAmp_gain;
 }
